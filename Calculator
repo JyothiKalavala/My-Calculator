@@ -1,0 +1,51 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error , Division by zero."
+
+def calculator():
+    print("Welcome ")
+    print("Select operation:")
+    print("a. Add")
+    print("b. Subtract")
+    print("c. Multiply")
+    print("d. Divide")
+    print("e. Exit")
+
+    while True:
+        choice = input("Enter choice (a/
+b/c/d/e): ")
+
+        if choice == 'e':
+            print("Exit")
+            break
+
+        if choice in ['a', 'b', 'c', 'd']:
+            try:
+                num1 = float(input(" First number: "))
+                num2 = float(input("Second number: "))
+
+                if choice == 'a':
+                    print(f"Result  {add(num1, num2)}")
+                elif choice == 'b':
+                    print(f"Result  {subtract(num1, num2)}")
+                elif choice == 'c':
+                    print(f" Result  {multiply(num1, num2)}")
+                elif choice == 'd':
+                    print(f" Result  {divide(num1, num2)}")
+            except ValueError:
+                print("Invalid input! Enter numeric values.")
+        else:
+            print("Invalid choice! Select valid one")
+
+calculator()
